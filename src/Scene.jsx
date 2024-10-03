@@ -18,12 +18,10 @@ export default function Scene() {
   return (
     <Canvas className='w-screen h-screen'>
 
-     <OrbitControls makeDefault />
-
      <directionalLight castShadow position={ [ 1, 2, 3] } intensity={ 1.5} />
      <ambientLight intensity={ .5} />
      
-     <primitive object={ model.scene } scale={ .35} />
+     <primitive object={ model.scene } position={[ 0,-2, 0]} scale={ .3} rotation={[0, -Math.PI / 2, 0]}/>
      </Canvas>
   )
 }
