@@ -1,9 +1,21 @@
-import Landing from "./pages/Landing";
+import React from 'react';
+import Landing from './pages/Landing';
+import Page2 from './pages/Page2';
+import Page3 from './pages/Page3';
+import Page4 from './pages/Page4';
+import Action from './pages/Action';
+import Footer from './pages/Footer';
 
 export default function Interface() {
   return (
-    <div className="absolute top-0 left-0 ">
+    <div className="w-full">
       <Landing />
+      <div className="h-screen bg-gray-800" />
+      <Page2 />
+      <Page3 />
+      <Page4 />
+      <Action />
+      <Footer />
     </div>
-  )
+  );
 }
