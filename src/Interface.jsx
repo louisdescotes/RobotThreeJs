@@ -8,9 +8,9 @@ import Footer from './pages/Footer';
 
 export default function Interface() {
   return (
-    <div className="w-full">
+    <div className="w-full h-full">
       <Landing />
-      <div className="h-screen bg-gray-800" />
+      <div className=" h-screen bg-black" />
       <Page2 />
       <Page3 />
       <Page4 />
