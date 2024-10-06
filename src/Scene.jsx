@@ -77,10 +77,28 @@ export default function Scene() {
       />
       <spotLight
         castShadow
-        position={[1, 2, 0]}
+        position={[2, 2, 0]}
+        rotation={[0, Math.PI * 2, 0]}
         penumbra={1}
-        distance={6}
-        angle={0.35}
+        distance={2}
+        angle={0.25}
+        intensity={24}
+      />
+            <spotLight
+        castShadow
+        position={[2, 2, 0]}
+        rotation={[0, 0, Math.PI * 2]}
+        penumbra={1}
+        distance={32}
+        angle={0.25}
+        intensity={392}
+      />
+            <spotLight
+        castShadow
+        position={[3, 2, 0]}
+        penumbra={1}
+        distance={2}
+        angle={0.32}
         intensity={100}
       />
     </>
