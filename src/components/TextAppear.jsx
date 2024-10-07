@@ -19,13 +19,13 @@ export default function TextAppear({ title, subtitle }) {
   };
 
   return (
-    <div ref={scrollRef}>
+    <div ref={scrollRef} className="max-w-[28rem] flex flex-col gap-1.5">
       <motion.h1
         initial="hidden"
         whileInView="visible"
         variants={variants}
         viewport={{ root: scrollRef }}
-        className="text-7xl text-center"
+        className="text-7xl"
       >
         {title}
       </motion.h1>
@@ -34,7 +34,7 @@ export default function TextAppear({ title, subtitle }) {
         whileInView="visible"
         variants={variants}
         viewport={{ root: scrollRef }}
-        className="text-m text-center"
+        className="text-m text-justify"
       >
         {subtitle}
       </motion.p>

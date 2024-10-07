@@ -27,7 +27,7 @@ export default function Scene() {
 
   return (
     <>
-      <ScrollControls pages={7} damping={0.3}>
+      <ScrollControls pages={6.3} damping={0.3}>
         <Scroll html>
           <Interface /> 
         </Scroll>
@@ -77,28 +77,10 @@ export default function Scene() {
       />
       <spotLight
         castShadow
-        position={[2, 2, 0]}
-        rotation={[0, Math.PI * 2, 0]}
+        position={[1, 2, 0]}
         penumbra={1}
-        distance={2}
-        angle={0.25}
-        intensity={24}
-      />
-            <spotLight
-        castShadow
-        position={[2, 2, 0]}
-        rotation={[0, 0, Math.PI * 2]}
-        penumbra={1}
-        distance={32}
-        angle={0.25}
-        intensity={392}
-      />
-            <spotLight
-        castShadow
-        position={[3, 2, 0]}
-        penumbra={1}
-        distance={2}
-        angle={0.32}
+        distance={6}
+        angle={0.35}
         intensity={100}
       />
     </>
@@ -111,11 +93,13 @@ function ScrollTrigger({ headRef }) {
   useFrame(() => {
     if (scroll && headRef.current) {
       const scrollOffset = scroll.offset;
+      
+      console.log(scrollOffset)
 
       // Position
       const defaultY = -.7;
 
-      headRef.current.position.y = defaultY - scrollOffset * 45;
+      headRef.current.position.y = defaultY - scrollOffset * 40;
 
       // Scale
       const defaultScale = 0.3;
