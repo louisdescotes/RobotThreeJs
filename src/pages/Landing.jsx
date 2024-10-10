@@ -5,7 +5,7 @@ export default function Landing() {
     <main className="relative w-full h-screen text-white">
       <section className="flex flex-col gap-4 justify-center items-center w-full h-3/5">
         <h1 className="text-7xl text-center">
-          Trust zebzebzeb <br /> to help you
+          Trust <span className="bg-custom-gradient bg-clip-text text-transparent">Sparky</span> <br /> to help you
         </h1>
         <p className="text-m text-center">
           Smart, efficient, and ready to <br /> transform your workflow
