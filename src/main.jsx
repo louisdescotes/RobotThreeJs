@@ -8,7 +8,7 @@ import { Canvas } from "@react-three/fiber";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
       <Menu />
-      <Canvas className="absolute z-0 w-screen h-screen"> 
+      <Canvas className="absolute z-0 w-screen h-[50svh]"> 
         <Scene />
       </Canvas>
   </StrictMode>

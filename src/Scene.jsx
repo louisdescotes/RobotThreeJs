@@ -15,25 +15,19 @@ export default function Scene() {
   const headRef = useRef();
   const sceneRef = useRef();
 
-  useFrame(({ mouse, camera }) => {
-    const xRotation = -(mouse.y * Math.PI) / 5;
-    const yRotation = (mouse.x * Math.PI) / 5;
-
-    headRef.current.rotation.x = xRotation;
-    headRef.current.rotation.y = yRotation - Math.PI / 2;
-
-    camera.lookAt(0, 0, 0);
-  });
-
   return (
     <>
-      <ScrollControls pages={6.3} damping={0.3}>
+      <ScrollControls pages={7.3} damping={0.3}>
         <Scroll html>
           <Interface /> 
         </Scroll>
 
         {/* 3D */}
         <Scroll>
+          <group
+          ref={sceneRef}
+          position={[ 0, 0, -5]}
+          >
           <group
             ref={headRef}
             scale={0.3}
@@ -52,15 +46,15 @@ export default function Scene() {
           </group>
 
           <primitive
-            ref={sceneRef}
             object={model.scene}
             position={[0, -2, 0]}
             scale={0.3}
             rotation={[0, -Math.PI / 2, 0]}
           />
+          </group>
         </Scroll>
 
-        <ScrollTrigger headRef={headRef} />
+        <ScrollTrigger sceneRef={sceneRef} headRef={headRef}/>
 
       </ScrollControls>
 
@@ -69,7 +63,7 @@ export default function Scene() {
       <ambientLight intensity={0.5} />
       <spotLight
         castShadow
-        position={[0, 2, 0]}
+        position={[0, 3, 0]}
         penumbra={1}
         distance={6}
         angle={0.35}
@@ -87,29 +81,43 @@ export default function Scene() {
   );
 }
 
-function ScrollTrigger({ headRef }) {
+function ScrollTrigger({ sceneRef, headRef }) {
   const scroll = useScroll();
 
-  useFrame(() => {
-    if (scroll && headRef.current) {
+  useFrame(({ mouse }) => {
+    const xRotation = -(mouse.y * Math.PI) / 5;
+    const yRotation = (mouse.x * Math.PI) / 5;
+
+    if (headRef.current && scroll.offset < 0.01) {
+      headRef.current.rotation.x = xRotation;
+      headRef.current.rotation.y = yRotation - Math.PI / 2;
+    }
+
+    if (scroll && sceneRef.current) {
       const scrollOffset = scroll.offset;
-      
-      console.log(scrollOffset)
 
       // Position
-      const defaultY = -.7;
+      const defaultY = -.5;
+      sceneRef.current.position.y = defaultY - scrollOffset * 40;
 
-      headRef.current.position.y = defaultY - scrollOffset * 40;
+      const defaultZ = -6;
+      const maxZ = -2;
+      const newPositionZ = defaultZ + scrollOffset * 25;
+      const finalPositionZ = Math.min(newPositionZ, maxZ);
+      sceneRef.current.position.z = finalPositionZ;
+
+      // Rotation
+      const rotationBase = scrollOffset * Math.PI * 5;
+      sceneRef.current.rotation.set(0, rotationBase, 0);
 
       // Scale
-      const defaultScale = 0.3;
-      const maxScale = 0.8;
+      const defaultScale = 2.5;
+      const maxScale = 6;
 
-      const newScale = defaultScale + scrollOffset * 2;
-
+      const newScale = defaultScale + scrollOffset * 8;
       const finalScale = Math.min(newScale, maxScale);
 
-      headRef.current.scale.set(finalScale, finalScale, finalScale);
+      sceneRef.current.scale.set(finalScale, finalScale, finalScale);
     }
   });
   return null;

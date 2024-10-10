@@ -4,6 +4,7 @@ export default function Page4() {
   return (
     <main className="relative w-screen h-screen text-white">
       <section className="flex flex-col gap-4 justify-center items-center w-full h-full">
+      <div className="absolute right-8">
         <TextAppear
           title="Opportunities"
           subtitle="Scanning the present, it identifies paths and choices, illuminating
@@ -11,6 +12,7 @@ export default function Page4() {
           the landscape of decision-making, guiding toward potential futures
           waiting to be explored"
         />
+        </div>
       </section>
     </main>
   );

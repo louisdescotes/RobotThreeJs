@@ -10,10 +10,11 @@ export default function Interface() {
   return (
     <div className="w-full h-full">
       <Landing />
-      <div className=" h-screen bg-black" />
+      <div className=" h-screen" />
       <Page2 />
       <Page3 />
       <Page4 />
+      <div className=" h-screen" />
       <Action />
       <Footer />
     </div>
