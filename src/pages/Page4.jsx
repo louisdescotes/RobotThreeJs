@@ -3,8 +3,8 @@ import TextAppear from "../components/TextAppear";
 export default function Page4() {
   return (
     <main className="relative w-screen h-screen text-white">
-      <section className="flex flex-col gap-4 justify-center items-center w-full h-full">
-      <div className="absolute right-8">
+      <section className="flex flex-col gap-4 ml-8 justify-center items-center w-full h-full">
+      <div className="lg:absolute lg:right-8">
         <TextAppear
           title="Opportunities"
           subtitle="Scanning the present, it identifies paths and choices, illuminating

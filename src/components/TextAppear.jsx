@@ -25,7 +25,7 @@ export default function TextAppear({ title, subtitle }) {
         whileInView="visible"
         variants={variants}
         viewport={{ root: scrollRef }}
-        className="text-7xl"
+        className="lg:text-7xl text-5xl"
       >
         {title}
       </motion.h1>
@@ -34,7 +34,7 @@ export default function TextAppear({ title, subtitle }) {
         whileInView="visible"
         variants={variants}
         viewport={{ root: scrollRef }}
-        className="text-m text-justify"
+        className="lg:text-m text-justify text-sm w-10/12"
       >
         {subtitle}
       </motion.p>
