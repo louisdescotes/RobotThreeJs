@@ -1,8 +1,16 @@
-# React + Vite
+# Sparky
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Sparky** est une expérimentation alliant mes compétences en **3D** et en **développement web**. Ce projet fictif m'a permis de combiner des outils comme **Blender** pour la 3D, ainsi que **React**, **Three.js**, et **Drei** pour la partie code.
 
-Currently, two official plugins are available:
+L'objectif de Sparky était de repousser mes limites techniques en créant un projet immersif et interactif.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technologies utilisées :
+- **Blender** : Modélisation 3D
+- **React** : Framework JavaScript
+- **Three.js** et **Drei** : Outils de rendu 3D
+
+### Inspiration :
+[TabishVisuals sur X](https://x.com/TabishVisuals)
+
+### Version live :
+[Découvrir Sparky en ligne](https://sparky-sigma.vercel.app/)
