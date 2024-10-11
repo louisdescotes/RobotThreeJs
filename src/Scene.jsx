@@ -2,8 +2,10 @@ import { useFrame, useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
 import { useRef } from "react";
-import { Scroll, ScrollControls, useScroll } from "@react-three/drei";
+import { PerspectiveCamera, Plane, Scroll, ScrollControls, useScroll } from "@react-three/drei";
 import Interface from "./Interface";
+import { DirectionalLightHelper, SpotLightHelper } from 'three';
+import { useHelper } from '@react-three/drei';
 
 export default function Scene() {
   const model = useLoader(GLTFLoader, "/test.glb", (loader) => {
@@ -14,6 +16,13 @@ export default function Scene() {
 
   const headRef = useRef();
   const sceneRef = useRef();
+  const directionalLightRef = useRef();
+  const directionalLightRef2 = useRef();
+  const directionalLightRef3 = useRef();
+
+  // useHelper(directionalLightRef, DirectionalLightHelper);
+  // useHelper(directionalLightRef2, DirectionalLightHelper);
+  // useHelper(directionalLightRef3, DirectionalLightHelper);
 
   return (
     <>
@@ -59,24 +68,39 @@ export default function Scene() {
       </ScrollControls>
 
       {/* Lumières */}
-      <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
-      <ambientLight intensity={0.5} />
-      <spotLight
+      <directionalLight
+        ref={directionalLightRef}
         castShadow
-        position={[0, 3, 0]}
-        penumbra={1}
-        distance={6}
-        angle={0.35}
-        intensity={100}
+        position={[.3, .3, 1]}
+        color={"#FAFAFA"}
+        intensity={4}
       />
-      <spotLight
+
+      <ambientLight intensity={.5} />
+
+      <directionalLight
         castShadow
-        position={[1, 2, 0]}
-        penumbra={1}
-        distance={6}
-        angle={0.35}
-        intensity={100}
+        position={[0, 1, 0]}
+        intensity={2}
+        color={"#1B80FF"}
       />
+
+      <directionalLight
+        ref={directionalLightRef2}
+        castShadow
+        position={[2, .2, .2]}
+        intensity={10}
+        color={"#1B80FF"}
+      />
+
+      <directionalLight
+        ref={directionalLightRef3}
+        castShadow
+        position={[-4, 1, -2]}
+        intensity={12}
+        color={"#6644FF"}
+      />
+
     </>
   );
 }
