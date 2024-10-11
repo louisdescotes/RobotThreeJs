@@ -2,7 +2,7 @@ import TextAppear from "../components/TextAppear";
 
 export default function Page2() {
   return (
-    <main className="relative right-8 w-screen h-screen text-white ">
+    <main className="relative w-screen h-screen text-white ">
       <section className="flex flex-col gap-4 ml-8 items-center w-full h-full">
       <div className="lg:absolute lg:right-8">
         <TextAppear
