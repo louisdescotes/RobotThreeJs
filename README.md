@@ -13,4 +13,7 @@ L'objectif de Sparky était de repousser mes limites techniques en créant un pr
 [TabishVisuals sur X](https://x.com/TabishVisuals)
 
 ### Version live :
+
+https://github.com/user-attachments/assets/99969cdd-527d-459f-b532-aec129242e35
+
 [Découvrir Sparky en ligne](https://sparky-sigma.vercel.app/)
