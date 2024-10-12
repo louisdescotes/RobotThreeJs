@@ -34,7 +34,7 @@ export default function TextAppear({ title, subtitle }) {
         whileInView="visible"
         variants={variants}
         viewport={{ root: scrollRef }}
-        className="lg:text-m text-justify text-sm w-10/12"
+        className="lg:text-m text-justify text-sm w-9/12"
       >
         {subtitle}
       </motion.p>
