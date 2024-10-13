@@ -76,9 +76,6 @@ export default function Scene() {
         <ScrollTrigger
           sceneRef={sceneRef}
           headRef={headRef}
-          box1Ref={box1Ref}
-          box2Ref={box2Ref}
-          box3Ref={box3Ref}
         />
       </ScrollControls>
 
@@ -119,7 +116,7 @@ export default function Scene() {
   );
 }
 
-function ScrollTrigger({ sceneRef, headRef, box1Ref, box2Ref, box3Ref }) {
+function ScrollTrigger({ sceneRef, headRef }) {
   const scroll = useScroll();
 
   useFrame(({ mouse }) => {
@@ -129,28 +126,6 @@ function ScrollTrigger({ sceneRef, headRef, box1Ref, box2Ref, box3Ref }) {
     if (headRef.current && scroll.offset < 0.01) {
       headRef.current.rotation.x = xRotation;
       headRef.current.rotation.y = yRotation - Math.PI / 2;
-    }
-
-
-    if (box1Ref.current && box2Ref.current && box3Ref.current) {
-      box1Ref.current.rotation.x += 0.003;
-      box1Ref.current.rotation.y += 0.003;
-
-      box2Ref.current.rotation.x -= 0.005;
-      box2Ref.current.rotation.y += 0.005;
-
-      box3Ref.current.rotation.x += 0.004;
-      box3Ref.current.rotation.y -= 0.004;
-
-      const rotationSpeed = Math.PI * 5 * scroll.offset;
-      box1Ref.current.rotation.x += scroll.offset *  0.001; 
-      box1Ref.current.rotation.y += 0.001; 
-
-      box2Ref.current.rotation.x += 0.001; 
-      box2Ref.current.rotation.y += 0.001; 
-
-      box3Ref.current.rotation.x += 0.001; 
-      box3Ref.current.rotation.y += 0.001; 
     }
 
     if (scroll && sceneRef.current) {
