@@ -10,7 +10,7 @@ export default function Footer() {
         </aside>
         <nav className="flex flex-col gap-1 text-[#D9D9D]">
           <a href="#">Index</a>
-          <a href="#">What he do</a>
+          <a href="#">What he does</a>
           <a href="#">Interface</a>
           <a href="#">Contact</a>
         </nav>
